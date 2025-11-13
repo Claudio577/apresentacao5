@@ -76,14 +76,26 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.metric("1️⃣ Passo", "Envie o CSV")
     st.write("O sistema lê e entende o arquivo — mesmo se estiver bagunçado.")
+    st.image(
+        "https://raw.githubusercontent.com/Claudio577/apresentacao5/main/uploadelimpeza.png",
+        caption="Upload e Limpeza Automática"
+    )
 
 with col2:
     st.metric("2️⃣ Passo", "Limpeza automática")
     st.write("Corrige colunas, remove erros e padroniza tudo.")
+    st.image(
+        "https://raw.githubusercontent.com/Claudio577/apresentacao5/main/Automático%20de%20EDA.png",
+        caption="Relatório Automático de EDA"
+    )
 
 with col3:
     st.metric("3️⃣ Passo", "Gere insights")
     st.write("Você recebe gráficos, análises e dashboards interativos.")
+    st.image(
+        "https://raw.githubusercontent.com/Claudio577/apresentacao5/main/InsightsIA.png",
+        caption="Insights com Inteligência Artificial"
+    )
 
 # ==========================================================
 # FUNCIONALIDADES
@@ -118,12 +130,16 @@ st.markdown("<p class='section-title'>🖼️ Demonstração visual</p>", unsafe
 colA, colB = st.columns(2)
 
 with colA:
-    st.image("https://i.imgur.com/F8VQQ4m.png", caption="Tela de Dashboard (exemplo)")
+    st.image(
+        "https://raw.githubusercontent.com/Claudio577/apresentacao5/main/Dashboard%20Interativo.png",
+        caption="Dashboard Interativo com múltiplos gráficos"
+    )
 
 with colB:
-    st.image("https://i.imgur.com/ILZzEMF.png", caption="Exemplo de análise automática")
-
-# (Você pode substituir pelas suas screenshots do app real)
+    st.image(
+        "https://raw.githubusercontent.com/Claudio577/apresentacao5/main/InsightsIA.png",
+        caption="Painel de Insights IA"
+    )
 
 # ==========================================================
 # ACESSAR O SISTEMA
