@@ -10,28 +10,56 @@ st.set_page_config(
 )
 
 # ==========================================================
-# ESTILO (OPCIONAL)
+# ESTILO PERSONALIZADO
 # ==========================================================
 st.markdown(
     """
     <style>
+    
+    /* ----------- TÍTULO PRINCIPAL ----------- */
     .titulo {
-        font-size: 42px;
-        font-weight: 700;
+        font-size: 48px;
+        font-weight: 800;
         text-align: center;
-        margin-bottom: -10px;
+        margin-bottom: -5px;
+        background: -webkit-linear-gradient(45deg, #007bff, #00c4ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
+
+    /* ----------- SUBTÍTULO ----------- */
     .subtitulo {
         font-size: 22px;
         text-align: center;
-        color: #555;
+        color: #444;
+        margin-bottom: 20px;
     }
+
+    /* ----------- TÍTULOS DE SEÇÃO ----------- */
     .section-title {
-        font-size: 28px;
+        font-size: 30px;
         margin-top: 40px;
         margin-bottom: 10px;
-        font-weight: 600;
+        font-weight: 700;
+        color: #0056b3;
+        border-left: 6px solid #0056b3;
+        padding-left: 10px;
     }
+
+    /* ----------- TEXTO GERAL ----------- */
+    .texto {
+        font-size: 18px;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    /* ----------- MÉTRICAS ----------- */
+    .metric-label {
+        font-size: 20px !important;
+        font-weight: 600 !important;
+        color: #0066cc !important;
+    }
+    
     </style>
     """,
     unsafe_allow_html=True
@@ -41,7 +69,7 @@ st.markdown(
 # HERO SECTION
 # ==========================================================
 st.markdown("<p class='titulo'>Plataforma de Análise Automática de Dados</p>", unsafe_allow_html=True)
-st.markdown("<p class='subtitulo'>Converta arquivos CSV em análises completas e organizadas de forma rápida e prática.</p>", unsafe_allow_html=True)
+st.markdown("<p class='subtitulo'>Converta arquivos CSV em análises completas, dashboards e insights de forma simples e rápida.</p>", unsafe_allow_html=True)
 
 st.markdown("---")
 
@@ -50,21 +78,23 @@ st.markdown("---")
 # ==========================================================
 st.markdown("<p class='section-title'>Sobre a plataforma</p>", unsafe_allow_html=True)
 
-st.write("""
-Esta plataforma foi desenvolvida para permitir que qualquer pessoa analise arquivos CSV de forma simples,
-mesmo sem conhecimentos avançados em programação ou estatística.
+st.markdown("""
+<div class='texto'>
+Esta plataforma foi criada para ajudar qualquer pessoa — mesmo sem conhecimento técnico — a analisar arquivos CSV
+de maneira eficiente e automatizada.
 
 O sistema realiza automaticamente:
 
-- Limpeza e organização dos dados  
-- Detecção e correção de erros comuns  
-- Geração de estatísticas básicas  
-- Criação de gráficos de análise  
-- Construção de dashboards interativos  
-- Produção de insights automáticos  
+<br>• Limpeza e organização dos dados  
+• Correção de erros  
+• Geração de estatísticas  
+• Criação de gráficos  
+• Construção de dashboards interativos  
+• Produção de insights automáticos  
 
-Ela é útil para estudantes, empresas, profissionais de análise de dados e qualquer pessoa que trabalha com planilhas.
-""")
+Ideal para estudantes, empresas, iniciantes em análise de dados e qualquer pessoa que trabalha com planilhas.
+</div>
+""", unsafe_allow_html=True)
 
 # ==========================================================
 # COMO FUNCIONA
@@ -74,69 +104,67 @@ st.markdown("<p class='section-title'>Como funciona</p>", unsafe_allow_html=True
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.metric("1º Passo", "Envio do arquivo CSV")
-    st.write("O usuário envia um arquivo CSV. O sistema interpreta a estrutura e identifica possíveis problemas.")
-    st.image(
-        "https://raw.githubusercontent.com/Claudio577/apresentacao5/main/uploadelimpeza.png",
-        caption="Upload e limpeza de dados"
-    )
+    st.metric("1º Passo", "Envie o CSV")
+    st.write("O sistema interpreta o arquivo e identifica possíveis erros.")
+    st.image("https://raw.githubusercontent.com/Claudio577/apresentacao5/main/uploadelimpeza.png",
+             caption="Upload e limpeza de dados")
 
 with col2:
     st.metric("2º Passo", "Processamento e limpeza")
-    st.write("O sistema organiza colunas, ajusta tipos de dados, remove inconsistências e prepara o arquivo.")
-    st.image(
-        "https://raw.githubusercontent.com/Claudio577/apresentacao5/main/Automático%20de%20EDA.png",
-        caption="Relatório automático de EDA"
-    )
+    st.write("Colunas e dados são padronizados, corrigidos e reorganizados.")
+    st.image("https://raw.githubusercontent.com/Claudio577/apresentacao5/main/Automático%20de%20EDA.png",
+             caption="Relatório automático de EDA")
 
 with col3:
-    st.metric("3º Passo", "Análise e insights")
-    st.write("Após o processamento, gráficos e insights são gerados automaticamente para facilitar a compreensão.")
-    st.image(
-        "https://raw.githubusercontent.com/Claudio577/apresentacao5/main/InsightsIA.png",
-        caption="Geração de insights automáticos"
-    )
+    st.metric("3º Passo", "Análises e insights")
+    st.write("Gráficos, dashboards e insights são gerados automaticamente.")
+    st.image("https://raw.githubusercontent.com/Claudio577/apresentacao5/main/InsightsIA.png",
+             caption="Insights automáticos")
 
 # ==========================================================
 # TECNOLOGIAS UTILIZADAS
 # ==========================================================
 st.markdown("<p class='section-title'>Tecnologias utilizadas</p>", unsafe_allow_html=True)
 
-st.write("""
-Este projeto utiliza ferramentas modernas de análise e visualização de dados:
+st.markdown("""
+<div class='texto'>
+A plataforma foi desenvolvida com tecnologias modernas de análise e visualização:
 
-**Python:** linguagem principal utilizada na lógica, limpeza de dados e geração de insights.  
-**Pandas:** biblioteca responsável por manipulação, organização e tratamento dos dados do CSV.  
-**Streamlit:** responsável por transformar o código Python em uma interface web interativa.  
-**Plotly:** biblioteca utilizada na criação dos gráficos dinâmicos e dashboards.  
-**Lógica de EDA automatizado:** código próprio que identifica problemas, estatísticas e padrões nos dados.  
-**Técnicas simples de IA e análise estatística:** responsáveis por destacar informações relevantes nos insights.
+<br>• <b>Python</b> — Linguagem principal da aplicação  
+• <b>Pandas</b> — Manipulação, limpeza e organização dos dados  
+• <b>Streamlit</b> — Construção da interface web interativa  
+• <b>Plotly</b> — Gráficos dinâmicos e dashboards  
+• <b>Rotinas próprias de EDA</b> — Identificação automática de padrões e problemas  
+• <b>Algoritmos simples de IA</b> — Apoio na geração de insights
 
-Essas ferramentas juntas tornam possível uma experiência intuitiva, rápida e acessível para qualquer usuário.
-""")
+Essas ferramentas proporcionam uma experiência acessível e poderosa, mesmo para quem não tem experiência técnica.
+</div>
+""", unsafe_allow_html=True)
 
 # ==========================================================
 # FUNCIONALIDADES
 # ==========================================================
 st.markdown("<p class='section-title'>Funcionalidades principais</p>", unsafe_allow_html=True)
 
-st.write("""
-**Upload inteligente**  
-O sistema aceita arquivos CSV simples ou complexos, mesmo com erros comuns.
+st.markdown("""
+<div class='texto'>
+<b>Upload inteligente</b><br>
+Recebe arquivos CSV de diferentes formatos e estruturas.
 
-**Limpeza automática de dados**  
-Padroniza nomes de colunas, corrige formatos, remove espaços, trata valores inconsistentes e ajusta tipos.
+<br><b>Limpeza automática</b><br>
+Padroniza colunas, corrige inconsistências e organiza o conjunto de dados.
 
-**Geração automática de EDA (Exploração de Dados)**  
-Estatísticas gerais, contagem de registros, identificação de valores nulos e distribuição dos dados.
+<br><b>Análise exploratória (EDA)</b><br>
+Geração de estatísticas essenciais e informações sobre a distribuição dos dados.
 
-**Dashboard interativo**  
-Visualizações como histogramas, boxplots, gráficos categóricos e correlações entre variáveis.
+<br><b>Dashboard interativo</b><br>
+Gráficos atualizados automaticamente conforme o usuário explora os dados.
 
-**Insights automáticos**  
-Identificação simplificada de padrões, comportamentos e tendências nos dados analisados.
+<br><b>Insights automáticos</b><br>
+Apontamento de padrões, comparações relevantes e tendências importantes.
 
-**Exportação do arquivo tratado**  
-O usuário pode baixar o CSV limpo após o processamento.
-""")
+<br><b>Exportação</b><br>
+Permite baixar o arquivo CSV já tratado.
+</div>
+""", unsafe_allow_html=True)
 
