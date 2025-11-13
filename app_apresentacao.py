@@ -141,13 +141,3 @@ with colB:
         caption="Painel de Insights IA"
     )
 
-# ==========================================================
-# ACESSAR O SISTEMA
-# ==========================================================
-st.markdown("<p class='section-title'>🚀 Acesse o sistema</p>", unsafe_allow_html=True)
-
-st.success("Clique abaixo para acessar o aplicativo completo:")
-
-st.markdown("### 👉 [Abrir a plataforma de análise](https://SEU-APP-STREAMLIT.streamlit.app)")
-
-st.caption("Substitua o link pelo endereço verdadeiro do seu app.")
